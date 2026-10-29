@@ -1,10 +1,10 @@
 # anotador
 
-Ferramenta de terminal para rotular textos e guardar os rótulos em JSON. 
+Ferramenta de terminal para rotular textos e guardar os rótulos em JSON.
 
 ## Status
 
-Em desenvolvimento. Por enquanto o projeto lê e grava arquivos JSON. O loop de anotação, as estatísticas e a exportação para CSV ainda não existem.
+Em desenvolvimento. A anotação funciona e continua de onde parou. As estatísticas, a exportação para CSV e os testes ainda não existem.
 
 ## Como rodar
 
@@ -17,6 +17,14 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 ```
+
+## Como usar
+
+```bash
+python3 main.py
+```
+
+Informe o caminho do arquivo de textos (por exemplo `dados/texto_teste.json`) e escolha anotar no menu. Para cada texto, responda com o atalho do rótulo, `s` para pular ou `q` para sair guardando o progresso. Os textos pulados voltam na próxima vez.
 
 ## Formato dos dados
 
@@ -31,11 +39,8 @@ A entrada é uma lista de textos com id (veja `dados/texto_teste.json`):
 
 As anotações vão para `saida/anotacoes.json`, com os mesmos campos mais o `rotulo`. Os atalhos de rótulo são `p` (positivo), `n` (negativo) e `ne` (neutro).
 
-## Próximos passos
+## a fazer: 
 
-- loop de anotação que continua de onde parou
 - comando de estatísticas
 - exportação para CSV
 - testes com pytest
-
-
