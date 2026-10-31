@@ -37,7 +37,7 @@ def anotar(caminho_textos, caminho_saida=saida):
         print('Nada a anotar: todos os textos já têm rótulo.')
         return
     print(f'{len(pendentes)} texto(s) pendente(s).')
-    print('Atalhos: p = positivo, n = negativo, ne = neutro, s = pular, q = sair')
+    print(f'\U0001F539 Atalhos: p = positivo, n = negativo, ne = neutro, s = pular, q = sair')
 
     try:
         for item in pendentes:
@@ -48,7 +48,7 @@ def anotar(caminho_textos, caminho_saida=saida):
             while True:
                 resposta = input('Rótulo (p/n/ne/s/q): ').strip().lower()
                 if resposta == 'q':
-                    print('Saindo. Progresso salvo.')
+                    print(f'\U0001F539 Saindo. Progresso salvo.')
                     return
                 if resposta == 's':
                     break
@@ -60,4 +60,4 @@ def anotar(caminho_textos, caminho_saida=saida):
                 print('Opção inválida. Use p, n, ne, s ou q.')
     except (KeyboardInterrupt, EOFError):
         print()
-        print('Interrompido. Progresso salvo.')
+        print(f'\U0001F539 Interrompido. Progresso salvo.')

@@ -6,11 +6,11 @@ from anotador import anotar, saida
 def main():
     while True:
         try:
-            caminho_textos = input('Caminho do arquivo de textos: ').strip()
+            caminho_textos = input('Informe o caminho do arquivo de textos: ').strip()
             break
         except (EOFError, KeyboardInterrupt) as erro:
             print('  ')
-            print(f'Operação interrompida: {erro}')
+            print(f'\U0001F539 Operação interrompida: {erro}')
             return
 
     if not Path(caminho_textos).exists():
@@ -30,7 +30,7 @@ def main():
         if opcao == '1':
             anotar(caminho_textos)
         elif opcao == '0':
-            print('Até a próxima.')
+            print('\U0001F539 Até a próxima.')
             break
         else:
             print('Opção inválida.')
