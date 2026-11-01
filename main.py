@@ -7,15 +7,15 @@ def main():
     while True:
         try:
             caminho_textos = input('Informe o caminho do arquivo de textos: ').strip()
+            if not Path(caminho_textos).is_file():
+                print(f'\U0001F539 Arquivo não encontrado: {caminho_textos}')
+                continue
             break
-        except (EOFError, KeyboardInterrupt) as erro:
+        except (EOFError, KeyboardInterrupt):
             print('  ')
-            print(f'\U0001F539 Operação interrompida: {erro}')
-            return
+            print(f'\U0001F539 Operação interrompida: ')
 
-    if not Path(caminho_textos).exists():
-        print(f'Arquivo não encontrado: {caminho_textos}')
-        return
+        
 
     while True:
         print()
@@ -24,7 +24,8 @@ def main():
         try:
             opcao = input('Escolha uma opção: ').strip()
         except (EOFError, KeyboardInterrupt):
-            print('Interrompido. Até a próxima.')
+            print(' ')
+            print(f'\U0001F539 Interrompido. Até a próxima.')
             break
 
         if opcao == '1':
